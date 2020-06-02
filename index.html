@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Archivo:500|Open+Sans:300,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>WeatherCheck.io</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="welcome">Welcome to WeatherCheck!</h1>
+    </div>
+    <div class="container-fluid details">
+      <label>Enter the name of of your city to check current Weather:</label
+      ><br />
+      <input type="text" name="" id="city" /><br />
+      <button id="getWeatherForecast">Click Me!</button>
+    </div>
+    <section>
+      <div class="container-fluid">
+        <div class="wrapper">
+          <div>
+            <h2>Weather Forecast</h2>
+            <div id="showWeatherForecast"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <div class="container">
+      <p>
+        Made with 💛 by
+        <a href="https://sanikachepe.github.io/index.html" target="blank"
+          >Sanika Chepe.</a
+        >
+      </p>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#getWeatherForecast").click(function () {
+          var city = $("#city").val();
+          var key = "f0f6c5a0f3d6e47ba8621ccad5a5367f";
+
+          $.ajax({
+            url: "http://api.openweathermap.org/data/2.5/weather",
+            dataType: "json",
+            type: "GET",
+            data: { q: city, appid: key, units: "metric" },
+
+            success: function (data) {
+              var wf = "";
+              $.each(data.weather, function (index, val) {
+                wf +=
+                  "<h2>" +
+                  data.name +
+                  "</h2><h5>Coordinates: " +
+                  data.coord.lon +
+                  "," +
+                  data.coord.lat +
+                  "</h5><hr><p>" +
+                  "<img src='http://openweathermap.org/img/wn/" +
+                  data.weather[0].icon +
+                  "@2x.png'</p>" +
+                  data.main.temp +
+                  "&deg;C" +
+                  "|" +
+                  val.main +
+                  ", " +
+                  val.description +
+                  "<br><hr><h3>Other details:</h3><p>Pressure: " +
+                  data.main.pressure +
+                  "hPa</p>" +
+                  "<p>Humidity: " +
+                  data.main.humidity +
+                  "%</p>" +
+                  "<p>Min. Temperature: " +
+                  data.main.temp_min +
+                  "&deg;C</p>" +
+                  "<p>Max. Temperature: " +
+                  data.main.temp_max +
+                  "&deg;C</p>" +
+                  "<p>Wind Speed: " +
+                  data.wind.speed +
+                  "m/s</p>" +
+                  "<p>Wind Direction: " +
+                  data.wind.deg +
+                  "&deg;</p>";
+              });
+              $("#showWeatherForecast").html(wf);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

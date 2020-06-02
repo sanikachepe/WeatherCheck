@@ -1,0 +1,76 @@
+body {
+  background-color: #864aff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+}
+#welcome {
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  font-size: 60px;
+  color: #00fdcb;
+}
+
+.container {
+  text-align: center;
+  padding: 10px;
+}
+
+.details {
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 20px;
+  text-shadow: black 1px 1px;
+}
+label {
+  padding-bottom: 10px;
+}
+input {
+  margin-bottom: 10px;
+  text-align: center;
+}
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+button {
+  background-color: #00fdcb;
+  border: none;
+  color: black;
+  padding: 8px 30px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  text-shadow: white 1px 1px;
+  border-radius: 5px;
+}
+.wrapper {
+  max-width: 700px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  text-align: center;
+  background-color: #ffe14d;
+  color: black;
+  padding: 5px;
+}
+
+h2 {
+  text-shadow: white 1px 1px;
+}
+
+h3 {
+  text-shadow: white 1px 1px;
+}
+a {
+  color: white;
+}
+a:hover {
+  color: #ffe14d;
+}
