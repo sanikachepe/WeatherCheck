@@ -54,7 +54,7 @@
           var key = "f0f6c5a0f3d6e47ba8621ccad5a5367f";
 
           $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/weather",
+            url: "https://api.openweathermap.org/data/2.5/weather",
             dataType: "json",
             type: "GET",
             data: { q: city, appid: key, units: "metric" },
@@ -70,7 +70,7 @@
                   "," +
                   data.coord.lat +
                   "</h5><hr><p>" +
-                  "<img src='http://openweathermap.org/img/wn/" +
+                  "<img src='https://openweathermap.org/img/wn/" +
                   data.weather[0].icon +
                   "@2x.png'</p>" +
                   data.main.temp +
