@@ -19,35 +19,53 @@
     <title>WeatherCheck.io</title>
   </head>
   <body>
-    <div class="container">
-      <h1 id="welcome">Welcome to WeatherCheck!</h1>
-    </div>
+    <!--HEADER-->
+    <header>
+      <div class="container">
+        <h1 id="welcome">Welcome to WeatherCheck!</h1>
+      </div>
+    </header>
+
+    <!--CITY INPUT-->
     <div class="container-fluid details">
       <label>Enter the name of of your city to check current Weather:</label
       ><br />
       <input type="text" name="" id="city" /><br />
-      <button id="getWeatherForecast">Click Me!</button>
+      <button id="getWeatherForecast" onclick="myFunction();">Click Me!</button>
     </div>
+
+    <!--WEATHER FORECAST-->
     <section>
       <div class="container-fluid">
         <div class="wrapper">
           <div>
             <h2>Weather Forecast</h2>
+            <div id="gif" class="container">
+              <img src="gif.gif" />
+            </div>
             <div id="showWeatherForecast"></div>
           </div>
         </div>
       </div>
     </section>
     <hr />
+
+    <!--CREDITS-->
     <div class="container">
       <p>
-        Made with 💛 by
-        <a href="https://sanikachepe.github.io/index.html" target="blank"
-          >Sanika Chepe.</a
-        >
+        Made with 💛 by Sanika Chepe.
       </p>
+      <a href="https://sanikachepe.github.io/index.html" target="blank"
+        >About me.</a
+      >
     </div>
+
+    <!--JAVASCRIPT-->
     <script type="text/javascript">
+      var gif = document.getElementById("gif");
+      function myFunction() {
+        gif.style.display = "none";
+      }
       $(document).ready(function () {
         $("#getWeatherForecast").click(function () {
           var city = $("#city").val();

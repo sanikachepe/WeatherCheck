@@ -70,7 +70,16 @@ h3 {
 }
 a {
   color: white;
+  font-size: 15px;
 }
 a:hover {
   color: #ffe14d;
+}
+
+p {
+  font-size: 20px;
+}
+
+img {
+  border-radius: 1000px;
 }
